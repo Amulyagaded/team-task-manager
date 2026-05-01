@@ -1,4 +1,5 @@
 const express = require("express");
+app.set("trust proxy", 1);
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
@@ -28,6 +29,6 @@ mongoose
 // Port
 const PORT = process.env.PORT || 5001;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
